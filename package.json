@@ -1,0 +1,55 @@
+{
+  "name": "deploy-to-sfdx",
+  "version": "0.0.1",
+  "description": "An application that will deploy an SFDX project from a public Github repo",
+  "main": "web.js",
+  "engines": {
+    "node": "18.16.0"
+  },
+  "scripts": {
+    "start": "node .",
+    "css-build": "mkdirp dist/assets/css && mkdirp dist/assets/fonts && ncp src/assets dist/assets && ncp src/assets/favicons dist/assets/favicons && node-sass src/scss -o dist/assets/css && ncp node_modules/@salesforce-ux/design-system/assets/fonts dist/assets/fonts",
+    "css-watch": "node-sass --watch src/scss -o dist/assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mshanemc/deploy-to-sfdx.git"
+  },
+  "author": "Shane McLaughlin",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/mshanemc/deploy-to-sfdx/issues"
+  },
+  "homepage": "https://github.com/mshanemc/deploy-to-sfdx#readme",
+  "dependencies": {
+    "@salesforce-ux/design-system": "^2.20.1",
+    "amqplib": "^0.10.3",
+    "async": "^3.2.4",
+    "body-parser": "^1.20.2",
+    "bufferutil": "4.0.7",
+    "child_process": "^1.0.2",
+    "child-process-promise": "^2.2.1",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-ws": "^5.0.2",
+    "got": "^10.0.0",
+    "heroku-logger": "^0.3.3",
+    "https": "^1.0.0",
+    "ioredis": "^5.3.2",
+    "sleep": "^6.3.0",
+    "universal-analytics": "^0.5.3",
+    "utf-8-validate": "6.0.3",
+    "ws": "8.13.0"
+  },
+ "devDependencies": {
+    "chai": "^4.3.7",
+    "eslint": "^8.39.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "mkdirp": "^3.0.0",
+    "mocha": "^10.2.0",
+    "ncp": "^2.0.0",
+    "node-sass": "^8.0.0"
+  }
+}
